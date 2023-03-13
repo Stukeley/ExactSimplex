@@ -3,8 +3,8 @@
 	using Fractions;
 
 	/// <summary>
-	/// A constraint in the form of Ax1 + Bx2 + Cx3 + ... <= B.
-	/// Sign can be either <= or >=.
+	/// A constraint in the form of Ax1 + Bx2 + Cx3 + ... (sign) B.
+	/// Sign can be either "less than or equal" or "greater than or equal".
 	/// </summary>
 	public class Constraint
 	{

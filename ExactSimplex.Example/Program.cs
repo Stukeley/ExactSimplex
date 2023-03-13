@@ -1,5 +1,6 @@
 ﻿// Sample code to invoke the ExactSimplex class.
 // Problem description:
+// Get the exact solution of the following problem:
 // max z = 141𝑥1 + 393𝑥2 + 273𝑥3 + 804𝑥4 + 175𝑥5
 // 3𝑥1 + 5𝑥2 + 2𝑥3 + 5𝑥4 + 4𝑥5 ≤ 36
 // 7𝑥1 + 12𝑥2 + 11𝑥3 + 10𝑥4 ≤ 21
