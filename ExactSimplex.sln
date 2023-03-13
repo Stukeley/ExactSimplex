@@ -1,8 +1,22 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExactSimplex", "ExactSimplex\ExactSimplex.csproj", "{840716C8-7938-498C-B88E-B54D6155C398}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExactSimplex.Example", "ExactSimplex.Example\ExactSimplex.Example.csproj", "{2953C0BF-7E49-4DB8-80FA-977A63DEC124}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{840716C8-7938-498C-B88E-B54D6155C398}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{840716C8-7938-498C-B88E-B54D6155C398}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{840716C8-7938-498C-B88E-B54D6155C398}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{840716C8-7938-498C-B88E-B54D6155C398}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2953C0BF-7E49-4DB8-80FA-977A63DEC124}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2953C0BF-7E49-4DB8-80FA-977A63DEC124}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2953C0BF-7E49-4DB8-80FA-977A63DEC124}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2953C0BF-7E49-4DB8-80FA-977A63DEC124}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

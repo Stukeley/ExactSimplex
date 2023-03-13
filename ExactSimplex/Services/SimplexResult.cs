@@ -1,7 +1,10 @@
 ﻿namespace ExactSimplex.Services
 {
-	public class SimplexResult
+	/// <summary>
+	/// Represents the result type of the simplex algorithm.
+	/// </summary>
+	public enum SimplexResult
 	{
-		
+		Unbounded, Found, NotYetFound
 	}
 }

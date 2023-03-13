@@ -2,7 +2,7 @@
 {
 	using System.Linq;
 
-	public static class ArrayCopyHelper
+	public static class ArrayHelper
 	{
 		public static T[] Copy<T>(T[] array)
 		{
@@ -28,6 +28,18 @@
 			}
 
 			return newMatr;
+		}
+		
+		public static T[] Append<T>(T[] array, T element)
+		{
+			var newArray = new T[array.Length + 1];
+			for (int i = 0; i < array.Length; i++)
+			{
+				newArray[i] = array[i];
+			}
+
+			newArray[array.Length] = element;
+			return newArray;
 		}
 	}
 }
