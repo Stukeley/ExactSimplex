@@ -2,7 +2,22 @@
 
     <PropertyGroup>
         <TargetFramework>netstandard2.0</TargetFramework>
+        <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+        <Title>Exact Simplex</Title>
+        <Authors>Stukeley</Authors>
+        <Description>An implementation of the Simplex algorithm in C# that gives exact results (in form of fractions).</Description>
+        <PackageProjectUrl>https://github.com/Stukeley/ExactSimplex</PackageProjectUrl>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+        <RepositoryUrl>https://github.com/Stukeley/ExactSimplex</RepositoryUrl>
+        <PackageTags>dotnet; simplex; linear programming; fractions</PackageTags>
     </PropertyGroup>
+
+    <ItemGroup>
+      <None Include="..\README.md">
+        <Pack>True</Pack>
+        <PackagePath>\</PackagePath>
+      </None>
+    </ItemGroup>
 
     <ItemGroup>
         <PackageReference Include="Fractions" Version="7.2.1" />
