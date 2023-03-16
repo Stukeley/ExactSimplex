@@ -1,7 +1,7 @@
 # ExactSimplex
 An implementation of the Simplex algorithm in C# that gives exact results (in form of fractions). Based on: https://github.com/timdolenko/simplex
 
-Available as a NuGet package: https://www.nuget.org/packages/ExactSimplex/1.0.0
+Available as a NuGet package: https://www.nuget.org/packages/ExactSimplex
 
 # Why?
 
