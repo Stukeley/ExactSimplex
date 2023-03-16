@@ -57,6 +57,53 @@
 
 			return (snaps, result.Result);
 		}
+		
+		/// <summary>
+		/// Use this method to get the variable values for the problem's solution.
+		/// </summary>
+		/// <param name="lastSnap">The output of the last iteration of the Simplex algorithm. Usually Results.Last().</param>
+		/// <returns>An array of Fractions representing each variable's value.</returns>
+		public Fraction[] GetVariableValues(SimplexSnap lastSnap)
+		{
+			// 1. Get the number of variables.
+			var numberOfVariables = _function.Variables.Length;
+			
+			// 2. Create an array of Fractions to store the values.
+			var variableValues = new Fraction[numberOfVariables];
+			
+			// 3. Look for unit columns in the matrix (only the first (numberOfVariables) columns).
+			for (int i = 0; i < numberOfVariables; i++)
+			{
+				var column = lastSnap.Matrix[i];
+				bool isASingleOne = column.Count(fraction => fraction == 1) == 1;
+				bool areAllZeros = column.Count(fraction => fraction == 0) == column.Length - 1;
+
+				if (isASingleOne && areAllZeros)
+				{
+					// 4. If a unit column is found, get the index of the row that contains the unit.
+					int unitRowIndex = 0;
+
+					for (int j = 0; j < column.Length; j++)
+					{
+						if (column[j] == 1)
+						{
+							unitRowIndex = j;
+							break;
+						}
+					}
+					
+					// 5. Get the value of the variable from the b array.
+					variableValues[i] = lastSnap.B[unitRowIndex];
+				}
+				else
+				{
+					// 6. If it's not a unit column, the variable's value is 0.
+					variableValues[i] = 0;
+				}
+			}
+
+			return variableValues;
+		}
 
 		private void CalculateSimplexTableau(Tuple<int, int> xij)
 		{
