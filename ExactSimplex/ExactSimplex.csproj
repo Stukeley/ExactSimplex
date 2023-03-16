@@ -10,6 +10,7 @@
         <PackageReadmeFile>README.md</PackageReadmeFile>
         <RepositoryUrl>https://github.com/Stukeley/ExactSimplex</RepositoryUrl>
         <PackageTags>dotnet; simplex; linear programming; fractions</PackageTags>
+        <Version>1.1.0</Version>
     </PropertyGroup>
 
     <ItemGroup>
