@@ -69,8 +69,25 @@ switch (result.ResultType)
 	case SimplexResult.Found:
 		Console.WriteLine("Solution was found.");
 		Console.WriteLine("Function value: " + result.Results.Last().FValue);
+		// Function value: 268
 		break;
 }
+```
+
+You can use the GetVariableValues method to retrieve the final values of the variables.
+
+```csharp
+var variableValues = simplex.GetVariableValues();
+
+for (int i = 0; i < variableValues.Length; i++)
+{
+    Console.WriteLine($"x{i+1} = {variableValues[i]}");
+}
+
+// Variable values:
+// x1 = 9/5
+// x2 = 104/5
+// x3 = 8/5
 ```
 
 You can also retrieve the simplex tableau.

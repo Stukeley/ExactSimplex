@@ -47,7 +47,7 @@ switch (result.ResultType)
 		Console.WriteLine("Function value: " + result.Results.Last().FValue);
 		
 		Console.WriteLine("Variable values: ");
-		var variableValues = simplex.GetVariableValues(result.Results.Last());
+		var variableValues = simplex.GetVariableValues();
 
 		for (int i = 0; i < variableValues.Length; i++)
 		{

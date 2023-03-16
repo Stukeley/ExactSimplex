@@ -61,9 +61,8 @@
 		/// <summary>
 		/// Use this method to get the variable values for the problem's solution.
 		/// </summary>
-		/// <param name="lastSnap">The output of the last iteration of the Simplex algorithm. Usually Results.Last().</param>
 		/// <returns>An array of Fractions representing each variable's value.</returns>
-		public Fraction[] GetVariableValues(SimplexSnap lastSnap)
+		public Fraction[] GetVariableValues()
 		{
 			// 1. Get the number of variables.
 			var numberOfVariables = _function.Variables.Length;
@@ -74,7 +73,7 @@
 			// 3. Look for unit columns in the matrix (only the first (numberOfVariables) columns).
 			for (int i = 0; i < numberOfVariables; i++)
 			{
-				var column = lastSnap.Matrix[i];
+				var column = _matrix[i];
 				bool isASingleOne = column.Count(fraction => fraction == 1) == 1;
 				bool areAllZeros = column.Count(fraction => fraction == 0) == column.Length - 1;
 
@@ -93,7 +92,7 @@
 					}
 					
 					// 5. Get the value of the variable from the b array.
-					variableValues[i] = lastSnap.B[unitRowIndex];
+					variableValues[i] = _b[unitRowIndex];
 				}
 				else
 				{
