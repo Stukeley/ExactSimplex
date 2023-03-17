@@ -10,7 +10,6 @@
 // x1, x2, x3 >= 0
 
 using System;
-using System.Linq;
 using ExactSimplex.Models;
 using ExactSimplex.Services;
 using Fractions;

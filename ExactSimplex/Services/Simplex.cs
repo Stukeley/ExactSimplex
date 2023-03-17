@@ -351,14 +351,14 @@
 				}
 			}
 
-			var appendixMatrix = new Fraction[0][];
-			var Bs = new Fraction[constraints.Length];
+			var appendixMatrix = Array.Empty<Fraction[]>();
+			var bs = new Fraction[constraints.Length];
 
 			for (int i = 0; i < constraints.Length; i++)
 			{
 				var current = constraints[i];
 
-				Bs[i] = current.B;
+				bs[i] = current.B;
 
 				if (current.Sign == ">=")
 				{
@@ -450,7 +450,7 @@
 				}
 			}
 
-			_b = Bs;
+			_b = bs;
 			this._matrix = newMatrix;
 		}
 	}
