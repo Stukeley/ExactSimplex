@@ -15,15 +15,34 @@ This code is meant to help those who seek an exact result for a Linear Programmi
 
 An example of how to use ExactSimplex is given in the ExactSimplex.Example console project.
 
-Consider the following LP problem:
+**Consider the following LP problem.**
 
-Maximize: P = 20x1 + 10x2 + 15x3  
-Subject to:  
-3x1 + 2x2 + 5x3 <= 55  
-2x1 + x2 + x3 <= 26  
-x1 + x2 + 3x3 <= 30  
-5x1 + 2x2 + 4x3 <= 57  
-x1, x2, x3 >= 0   
+Maximize: 
+
+```math
+P = 20x1 + 10x2 + 15x3
+```
+
+Subject to:
+```math
+3x1 + 2x2 + 5x3 \le 55
+```
+
+```math
+2x1 + x2 + x3 \le 26
+```
+
+```math
+x1 + x2 + 3x3 \le 30
+```
+
+```math
+5x1 + 2x2 + 4x3 \le 57
+```
+
+```math
+x1, x2, x3 \ge 0
+```
 
 ### Create an array of Constraints with the desired amount of variables (just their coefficients).
 
