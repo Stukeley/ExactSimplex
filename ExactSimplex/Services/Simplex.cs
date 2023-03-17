@@ -21,9 +21,11 @@
 		private bool[] _mb;
 		private Fraction[] _m;
 		private Fraction[][] _matrix;
+		private readonly List<SimplexSnap> _snaps;
 
 		public Simplex(Function function, Constraint[] constraints)
 		{
+			_snaps = new List<SimplexSnap>();
 			_function = function.IsExtrMax ? function : FunctionHelper.Canonize(function);
 
 			GetMatrix(constraints);
@@ -39,23 +41,34 @@
 		/// <summary>
 		/// Use this method to get the result of the simplex algorithm.
 		/// </summary>
-		/// <returns></returns>
+		/// <returns>A list of steps of the Simplex algorithm, and its result type.</returns>
 		public (List<SimplexSnap> Results, SimplexResult ResultType) GetResult()
 		{
-			var snaps = new List<SimplexSnap>();
-			snaps.Add(new SimplexSnap(_b, _matrix, _m, _f, _c, _functionVariables, _isMDone, _mb));
+			_snaps.Clear();
+			_snaps.Add(new SimplexSnap(_b, _matrix, _m, _f, _c, _functionVariables, _isMDone, _mb));
 
 			var result = NextStep();
 			int i = 0;
 			while (result.Result == SimplexResult.NotYetFound && i < 100)
 			{
 				CalculateSimplexTableau(result.Index);
-				snaps.Add(new SimplexSnap(_b, _matrix, _m, _f, _c, _functionVariables, _isMDone, _mb));
+				_snaps.Add(new SimplexSnap(_b, _matrix, _m, _f, _c, _functionVariables, _isMDone, _mb));
 				result = NextStep();
 				i++;
 			}
 
-			return (snaps, result.Result);
+			return (_snaps, result.Result);
+		}
+
+		/// <summary>
+		/// Use this method to get the function value for the problem's solution directly.
+		/// </summary>
+		/// <returns>The final function value.</returns>
+		public Fraction GetFunctionValue()
+		{
+			var value = _snaps.LastOrDefault()?.FValue ?? 0;
+			
+			return value;
 		}
 		
 		/// <summary>

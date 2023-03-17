@@ -44,7 +44,7 @@ switch (result.ResultType)
 
 	case SimplexResult.Found:
 		Console.WriteLine("Solution was found.");
-		Console.WriteLine("Function value: " + result.Results.Last().FValue);
+		Console.WriteLine("Function value: " + simplex.GetFunctionValue());
 		
 		Console.WriteLine("Variable values: ");
 		var variableValues = simplex.GetVariableValues();

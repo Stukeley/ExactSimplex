@@ -4,7 +4,7 @@
 
 	/// <summary>
 	/// A function to be optimized.
-	/// Example: max z = 141x1 + 393x2 + 273x3 + 804x4 + 175x5
+	/// Example: max P = 20x1 + 10x2 + 15x3
 	/// Supports two types of functions: max and min.
 	/// </summary>
 	public class Function

@@ -18,10 +18,12 @@
 		public static T[][] Copy<T>(T[][] matrix)
 		{
 			var newMatr = new T[matrix.Length][];
+			int lengthY = matrix.First().Length;
+			
 			for (int i = 0; i < matrix.Length; i++)
 			{
-				newMatr[i] = new T[matrix.First().Length];
-				for (int j = 0; j < matrix.First().Length; j++)
+				newMatr[i] = new T[lengthY];
+				for (int j = 0; j < lengthY; j++)
 				{
 					newMatr[i][j] = matrix[i][j];
 				}
